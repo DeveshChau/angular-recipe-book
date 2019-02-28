@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { Recipe } from "src/app/models/recipe.model";
 import { ShoppingListService } from "../shopping-list/shoppingList.service";
 import { Ingredient } from "src/app/models/ingredient.model";
@@ -6,9 +6,7 @@ import { Ingredient } from "src/app/models/ingredient.model";
 @Injectable() 
 export class RecipeService {
 
-    recipeSelected = new EventEmitter<Recipe>()
-    
-    recipe: Recipe[] = [
+    private recipe: Recipe[] = [
         new Recipe("Veg Burger",
         "Home made veg burger simply delicious to taste. The burger buns are stuffed with vegetable patties, spiced mayonnaise dressing and cucumber, tomato, onion slices",
         "https://susanstable.com/wp-content/uploads/veggie-burger-easy-4-copy.jpg",
