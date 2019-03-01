@@ -33,6 +33,7 @@
               id="imagePath" 
               class="form-control"
               formControlName="imagePath"
+              #imagePath
               >
           </div>
         </div>
@@ -40,7 +41,7 @@
       <div class="row">
         <div class="col-xs-12">
           <img 
-            src="" 
+            [src]="imagePath.value" 
             class="img-responsive"
             >
         </div>
@@ -90,7 +91,11 @@
             <div class="col-xs-2">
               <div class="form-group">
                 <label for="cancel">Cancel</label>
-                <button class="btn btn-danger form-control" id="cancel">X</button>
+                <button 
+                class="btn btn-danger form-control" 
+                id="cancel"
+                type="button"
+                (click)="onDeleteIngredient(i)">X</button>
               </div>
             </div>
           </div>

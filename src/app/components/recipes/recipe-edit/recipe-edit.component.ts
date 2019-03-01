@@ -38,14 +38,16 @@ export class RecipeEditComponent implements OnInit {
     } else {
       this.recipeListService.addRecipe(this.recipeForm.value)
     }
+    this.onCancel()
   }
 
   onCancel(){
-    console.log('cancel');
-    
     this.router.navigate(['../'],{relativeTo: this.routes})
   }
 
+  onDeleteIngredient(index: number){
+    (<FormArray>this.recipeForm.get('ingredients')).removeAt(index)
+  }
   onAddIngredient(){
     (<FormArray>this.recipeForm.get('ingredients')).push(
       new FormGroup({
