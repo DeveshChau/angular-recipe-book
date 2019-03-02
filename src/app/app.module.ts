@@ -1,11 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './components/shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingListService } from './components/shopping-list/shoppingList.service';
 import { AppRoutingModule } from './app-routing.module';
 import { RecipeService } from './components/recipes/recipe.service';
@@ -17,21 +15,21 @@ import { AuthService } from './components/auth/auth.service';
 import { AuthGuard } from './components/auth/authGuard.service';
 import { RecipesModule } from './components/recipes/recipes.module'
 import { SharedModule } from './shared/shred.module';
+import { ShoppingListModule } from './components/shopping-list/shoppingList.module';
+import { AuthModule } from './components/auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    SignInComponent,
-    SignUpComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RecipesModule,
+    AuthModule,
+    ShoppingListModule,
     SharedModule,
     AppRoutingModule
   ],
