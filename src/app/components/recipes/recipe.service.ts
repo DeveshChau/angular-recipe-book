@@ -8,6 +8,7 @@ import { Subject } from "rxjs";
 export class RecipeService {
 
     recipeChanged = new Subject<Recipe[]>()
+    
     private recipe: Recipe[] = [
         new Recipe("Veg Burger",
         "Home made veg burger simply delicious to taste. The burger buns are stuffed with vegetable patties, spiced mayonnaise dressing and cucumber, tomato, onion slices",
