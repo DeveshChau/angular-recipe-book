@@ -1,15 +1,14 @@
 import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { Routes, RouterModule, PreloadAllModules } from "@angular/router";
 import { HomeComponent } from "./core/home/home.component";
-import { AuthGuard } from "./components/auth/authGuard.service";
 
 const appRoute: Routes = [
     {path:'', component: HomeComponent},
-    {path:'recipes', loadChildren: './components/recipes/recipes.module#RecipesModule', canLoad: [AuthGuard]},
+    {path:'recipes', loadChildren: './components/recipes/recipes.module#RecipesModule'},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoute)],
+  imports: [RouterModule.forRoot(appRoute,{preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]  
 })
 
