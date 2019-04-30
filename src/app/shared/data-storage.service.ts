@@ -13,13 +13,13 @@ export class DataStorageService {
 
     storeRecipes() {
         const token = this.authService.getToken();
-        return this.http.put('https://angular-recipe-book-1b0ca.firebaseio.com/recipes.json?auth=' + token, this.recipeService.getRecipe());
+        return this.http.put('https://angular-recipe-book-39895.firebaseio.com/recipes.json?auth=' + token, this.recipeService.getRecipe());
     }
 
     getRecipes() {
         const token = this.authService.getToken();
 
-        this.http.get('https://angular-recipe-book-1b0ca.firebaseio.com/recipes.json?auth=' + token)
+        this.http.get('https://angular-recipe-book-39895.firebaseio.com/recipes.json?auth=' + token)
         .pipe(map(
             (response:Response) => {
                 const recipes: Recipe[] = response.json();
